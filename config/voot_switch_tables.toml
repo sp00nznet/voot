@@ -1,0 +1,17 @@
+# Virtual On: Oratorio Tangram - Switch Table Definitions
+# These are populated as jump tables are discovered during recompilation.
+#
+# Format:
+#   [tables."0xADDRESS"]
+#   base = "0xBASE_ADDRESS"
+#   count = NUMBER_OF_ENTRIES
+#
+# Switch tables are identified when the recompiler encounters indirect branches
+# (bctr instructions) that load targets from a table in the data section.
+
+[tables]
+# To be populated during recompilation debugging
+# Example:
+# [tables."0x82XXXXXX"]
+# base = "0x82YYYYYY"
+# count = 16

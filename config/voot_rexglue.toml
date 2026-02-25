@@ -1,0 +1,62 @@
+# Virtual On: Oratorio Tangram - ReXGlue Codegen Configuration
+# Xbox 360 XBLA Title ID: 0x58410985
+
+[game]
+name = "voot"
+title = "Virtual On: Oratorio Tangram"
+title_id = "0x58410985"
+
+[input]
+# Path to the XEX binary
+xex_path = "../default.xex"
+
+[output]
+# Generated source output directory
+output_dir = "../generated"
+# Prefix for generated files
+prefix = "voot"
+# Number of source file splits (large binaries need multiple files)
+source_splits = 20
+
+[image]
+# Xbox 360 PE image layout
+base_address = "0x82000000"
+# Code section start (determined after first recomp pass)
+# code_start = "0x82010000"
+# Code section end (determined after first recomp pass)
+# code_end = "0x????????"
+image_size = "0x1A30000"
+pe_offset = "0x4000"
+entry_point = "0x00000604"
+
+[codegen]
+# Enable safety overrides in generated code
+safe_indirect_calls = true
+# Warn on unimplemented PPC instructions instead of crashing
+warn_unimplemented = true
+# Generate function table for indirect dispatch
+generate_function_table = true
+
+# Manual function overrides
+# These are functions that need special handling:
+# - vtable thunks that the static analyzer can't auto-detect
+# - functions that were merged/split by the compiler
+# - functions with non-standard calling conventions
+[codegen.overrides]
+# Add function overrides here as they are discovered during recompilation
+# Format: address = "type"
+# Types: "skip" (don't recompile), "merge_next" (merge with following function),
+#        "thunk" (generate thunk), "manual" (hand-written override in stubs.cpp)
+
+# Example (to be filled in during recomp):
+# "0x82XXXXXX" = "skip"
+# "0x82XXXXXX" = "merge_next"
+
+[switch_tables]
+# Jump table definitions discovered during recompilation
+# These are needed for indirect branches (switch statements compiled to jump tables)
+# Format: address = { base = "0xAddr", count = N }
+# Will be populated as switch tables are identified during debugging
+
+# Include separate switch tables file if it gets large
+# include = "voot_switch_tables.toml"

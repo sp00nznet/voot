@@ -1,0 +1,43 @@
+# Build output
+build/
+out/
+cmake-build-*/
+
+# Generated recompiled source (huge, regenerated from XEX)
+generated/voot_recomp.*.cpp
+
+# Game binaries (copyrighted - do not commit)
+*.xex
+*.xbe
+*.iso
+*.rar
+*.zip
+*.7z
+
+# Extracted content
+_extract/
+
+# IDE
+.vs/
+.vscode/
+*.sln
+*.vcxproj*
+.idea/
+
+# OS
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Settings (user-specific)
+voot_settings.toml
+
+# Claude
+.claude/
+
+# Python
+__pycache__/
+*.pyc
+
+# Crash dumps
+*.dmp
