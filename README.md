@@ -171,6 +171,9 @@ This project builds directly on the architecture and patterns established by [vi
 
 ## Legal
 
+The code in this repo is MIT: see [LICENSE](LICENSE). Code generated from the
+game (`generated/`) is made locally from your own copy and never committed.
+
 This project contains no copyrighted game code or assets. You must provide your own legally obtained copy of Virtual On: Oratorio Tangram (Xbox 360) to use this recompiler.
 
 The recompilation tools and runtime code are open source. The generated C++ source (from your own binary) is gitignored.
